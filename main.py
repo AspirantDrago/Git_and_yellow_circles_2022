@@ -22,11 +22,11 @@ class Example(QWidget):
         qp.end()
 
     def draw_circle(self, qp):
-        diametr = random.randint(self.MINIMAL_DIAMETR, min(self.width(), self.height()) // 2)
+        diameter = random.randint(self.MINIMAL_DIAMETR, min(self.width(), self.height()) // 2)
         qp.setBrush(self.CIRCLE_COLOR)
-        x = 30
-        y = 30
-        qp.drawEllipse(x, y, x + diametr, y + diametr)
+        x = random.randint(0, self.width() - diameter)
+        y = random.randint(0, self.height() - diameter)
+        qp.drawEllipse(x, y, diameter, diameter)
 
 
 def my_exception_hook(exctype, value, traceback):
